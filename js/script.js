@@ -11,23 +11,26 @@ createApp({
     data(){
 
         return{
-            mailsArray :["pippo@gmail.com", "giova@ciao.com"]
+            mailsArray :[]
         }
     },
     methods: {
         
-        
-        getMails(){
-            axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((resp) =>{
-                console.log(resp.data.response);
-                thisMail = resp.data.response;
-                mailsArray.push(thisMail);
-            })
-        }
+        // getMails(){
+        //     axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((resp) =>{
+        //         console.log(resp.data.response);
+        //         thisMail = resp.data.response;
+        //         mailsArray.push(thisMail);
+        //     })
+        // }
 
     },
     created() {
-
+        // getMails();
+                
+        axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(function(resp){
+            console.log(resp)
+        })
     }
 
 }).mount("#app")
