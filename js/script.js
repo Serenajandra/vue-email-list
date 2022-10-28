@@ -15,22 +15,24 @@ createApp({
         }
     },
     methods: {
-        
-        // getMails(){
-        //     axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((resp) =>{
-        //         console.log(resp.data.response);
-        //         thisMail = resp.data.response;
-        //         mailsArray.push(thisMail);
-        //     })
-        // }
 
     },
     created() {
-        // getMails();
                 
-        axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(function(resp){
-            console.log(resp)
-        })
+       
+        for(let i = 0; i< 10; i++){
+            axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((resp) =>{
+                console.log(resp.data.response);
+                this.singleMail = resp.data.response;
+                this.mailsArray.push(this.singleMail);
+            })
+        }
+               
+        
+
+        // axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(function(resp){
+        //     console.log(resp)
+        // })
     }
 
 }).mount("#app")
