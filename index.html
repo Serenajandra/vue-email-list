@@ -18,12 +18,14 @@
         <div class="container">
             <h1>
                 Emails List
-                <ul>
-                    <li v-for="(mail) in mailsArray">
-                        {{mail}}
-                    </li>
-                </ul>
-            </h1>  
+            </h1>
+            <ul v-if="mailsArray.length === 10">
+                <li v-for="(mail) in mailsArray">
+                    {{mail}}
+                </li>
+            </ul>
+            <h2 v-else> loading...</h2>
+              
         </div>
     </div>
     <script src="js/script.js"></script>
